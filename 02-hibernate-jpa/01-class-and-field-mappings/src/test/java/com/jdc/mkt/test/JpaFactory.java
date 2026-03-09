@@ -16,14 +16,14 @@ public class JpaFactory {
 	@Test
 	void test() {
 		emf = Persistence.createEntityManagerFactory("class-and-field-mappings");
-//		em = emf.createEntityManager();
-//		
-//		var user = new User();
-//		user.setName("Andrew");
-//		user.setAge(20);
-//		
-//		em.getTransaction().begin();
-//		em.persist(user);
-//		em.getTransaction().commit();
+		em = emf.createEntityManager();
+		
+		var user = new User();
+		user.setName("Andrew");
+		user.setAge(20);
+		
+		em.getTransaction().begin();
+		em.persist(user);
+		em.getTransaction().commit();
 	}
 }
