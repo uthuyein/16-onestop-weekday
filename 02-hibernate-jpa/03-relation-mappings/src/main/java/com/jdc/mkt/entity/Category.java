@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -26,6 +28,8 @@ public class Category {
 	@Column(columnDefinition = "tinyint(1) not null default 1")
 	private boolean isActive;
 	
-	@OneToMany(mappedBy = "category")
+	@OneToMany
+	@JoinTable(name = "cat_prod_tbl")
+//	@JoinColumn(name = "cat_id")
 	private List<Product>products;
 }
