@@ -1,6 +1,5 @@
 package com.jdc.mkt;
 
-@SuppressWarnings("unused")
 public class User {
 
 	private int id;

@@ -20,12 +20,15 @@ public class Trip {
 	private String destination;
 	
 	@ManyToOne
+//	@JoinColumn(insertable = false,updatable = false)
 	@MapsId("paymentId")
 	private Payment payment;
 	@ManyToOne
+//	@JoinColumn(insertable = false,updatable = false)
 	@MapsId("passengerId")
 	private Passenger passenger;
 	@ManyToOne
+//	@JoinColumn(insertable = false,updatable = false)
 	@MapsId("driverId")
 	private Driver driver;
 }
