@@ -1,5 +1,6 @@
 package com.jdc.mkt.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CollectionTable;
@@ -9,9 +10,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
+@NoArgsConstructor
 @DiscriminatorValue("2")
 @EqualsAndHashCode(callSuper = false)
 public class Staff extends Account{
@@ -23,10 +26,22 @@ public class Staff extends Account{
 			joinColumns = {
 					@JoinColumn(name = "staff_id")
 			})
-	private List<String> informations;
+	private List<String> informations ;
 	
-	public Staff() {
+	{
 		setRole(Role.STAFF);
+		informations = new ArrayList<String>();
+	}
+	
+	public Staff(String loginId,String pass) {
+		super(loginId,pass);
+	}
+	
+	
+	public void addInfo(String...infos) {
+		for(String str : infos) {
+			informations.add(str);
+		}
 	}
 	
 }

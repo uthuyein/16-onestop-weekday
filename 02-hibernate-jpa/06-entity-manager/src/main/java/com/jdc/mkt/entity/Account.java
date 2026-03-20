@@ -1,7 +1,5 @@
 package com.jdc.mkt.entity;
 
-import java.util.UUID;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorColumn;
 import jakarta.persistence.DiscriminatorType;
@@ -15,11 +13,16 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
 @Data
 @Entity
+@NoArgsConstructor
+@RequiredArgsConstructor
 @DiscriminatorValue("1")
-@DiscriminatorColumn(name ="Child",discriminatorType = DiscriminatorType.INTEGER)
+@DiscriminatorColumn(name ="Object",discriminatorType = DiscriminatorType.INTEGER)
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class Account {
 
@@ -27,11 +30,13 @@ public abstract class Account {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
+	@NonNull
 	@Column(nullable = false,length = 20,unique = true)
-	private String loginId;
+	private  String loginId;
 	
+	@NonNull
 	@Column(nullable = false,length = 20)
-	private String password;
+	private  String password;
 	
 	@Enumerated(EnumType.STRING)
 	private Role role;
