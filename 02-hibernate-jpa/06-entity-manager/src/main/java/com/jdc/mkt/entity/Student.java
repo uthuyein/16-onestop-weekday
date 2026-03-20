@@ -1,5 +1,6 @@
 package com.jdc.mkt.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
@@ -14,7 +15,7 @@ import lombok.NoArgsConstructor;
 @DiscriminatorValue("4")
 public class Student extends Account{
 
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	private Course course;
 	
 	public Student (String loginId,String pass) {

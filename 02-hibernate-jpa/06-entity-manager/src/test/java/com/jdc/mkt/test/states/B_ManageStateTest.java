@@ -25,8 +25,8 @@ public class B_ManageStateTest extends JpaFactory{
 	 */
 	
 	@Order(3)
-	//@ParameterizedTest
-	@CsvSource("Michael bannett,2")
+	@ParameterizedTest
+	@CsvSource("Michael bannett,5")
 	void findWithNotFoundIdTest(String loginId,int id) {
 		var em = emf.createEntityManager();
 	
@@ -42,7 +42,7 @@ public class B_ManageStateTest extends JpaFactory{
 	
 	@Order(2)
 	@ParameterizedTest
-	@CsvSource("Michael bannett,1")
+	@CsvSource("Michael Bannett,1")
 	void findWithFoundIdTest(String loginId,int id) {
 		var em = emf.createEntityManager();
  		var student = em.find(Student.class, id); //or getReference
@@ -54,15 +54,15 @@ public class B_ManageStateTest extends JpaFactory{
 
 	@Order(1)
 	@ParameterizedTest
-	@CsvSource("Michael bannett,123")
+	@CsvSource("David,123")
 	void persistTest(String loginId,String password) {
 		var student = new Student(loginId,password);
-		var course = new Course("Java Basic");
+		var course = new Course("Python");
 		student.setCourse(course);
 		
 		var em = emf.createEntityManager();
 		em.getTransaction().begin();
-		em.persist(course);
+//		em.persist(course);
 		em.persist(student);
 		assertTrue(em.contains(student));
 		em.getTransaction().commit();
