@@ -20,5 +20,5 @@ public class PurchaseDetailPk implements Serializable{
 	@Column(name = "medicine_id")
 	private int medicineId;
 	
-	private LocalTime createTime;
+	private LocalTime purchaseTime;
 }

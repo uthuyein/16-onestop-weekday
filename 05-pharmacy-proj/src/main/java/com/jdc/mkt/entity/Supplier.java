@@ -4,6 +4,7 @@ import jakarta.persistence.AttributeOverride;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ExcludeDefaultListeners;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -12,6 +13,7 @@ import lombok.Data;
 
 @Data
 @Entity
+@ExcludeDefaultListeners
 @Table(name = "supplier_tbl")
 public class Supplier {
 
@@ -25,8 +27,8 @@ public class Supplier {
 	private Contact primary;
 	
 	@Embedded
-	@AttributeOverride(name = "email",column = @Column(name = "secondary_email"))
-	@AttributeOverride(name = "phone",column = @Column(name = "secondary_phone"))
+	@AttributeOverride(name = "email",column = @Column(name = "secondary_email",length = 20,unique = true))
+	@AttributeOverride(name = "phone",column = @Column(name = "secondary_phone",length = 20,unique = true))
 	private Contact secondary;
 	
 	@Column(columnDefinition = "tinyint(1) default 1")

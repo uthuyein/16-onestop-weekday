@@ -1,6 +1,10 @@
 package com.jdc.mkt.entity;
 
+import com.jdc.mkt.entity.listeners.EnableTimerListener;
+import com.jdc.mkt.entity.listeners.Times;
+
 import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
@@ -11,7 +15,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "purchase_detail_tbl")
-public class PurchaseDetails {
+public class PurchaseDetails implements EnableTimerListener{
 
 	@EmbeddedId
 	private PurchaseDetailPk id;
@@ -20,6 +24,9 @@ public class PurchaseDetails {
 	
 	@Column(name = "purchase_price")
 	private double purchasePrice;
+	
+	@Embedded
+	private Times times;
 	
 	@ManyToOne
 	@MapsId("purchaseId")

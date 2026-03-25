@@ -3,6 +3,7 @@ package com.jdc.mkt.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ExcludeDefaultListeners;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -11,6 +12,7 @@ import lombok.Data;
 
 @Data
 @Entity
+@ExcludeDefaultListeners
 @Table(name = "customer_tbl")
 public class Customer {
 
