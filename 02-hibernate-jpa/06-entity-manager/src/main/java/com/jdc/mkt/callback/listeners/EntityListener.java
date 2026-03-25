@@ -2,8 +2,6 @@ package com.jdc.mkt.callback.listeners;
 
 import java.time.LocalDateTime;
 
-import jakarta.persistence.PostPersist;
-import jakarta.persistence.PostUpdate;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 
