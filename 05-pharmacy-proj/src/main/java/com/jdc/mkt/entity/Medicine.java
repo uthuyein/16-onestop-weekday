@@ -30,7 +30,7 @@ public class Medicine implements EnableTimerListener{
 	@Embedded
 	private Times times;
 	
-	@Column(columnDefinition = "tinyint(1) default 1")
+	@Column(name="is_active", columnDefinition = "tinyint(1) default 1")
 	private boolean isActive;
 	
 	@ManyToOne

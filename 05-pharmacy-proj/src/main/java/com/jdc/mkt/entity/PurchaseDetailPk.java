@@ -14,11 +14,11 @@ public class PurchaseDetailPk implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	@Column(name = "purchase_id")
+	@Column(name = "purchase_id",length = 36)
 	private UUID purchaseId;
 	
 	@Column(name = "medicine_id")
 	private int medicineId;
-	
+	@Column(name = "purchase_time")
 	private LocalTime purchaseTime;
 }

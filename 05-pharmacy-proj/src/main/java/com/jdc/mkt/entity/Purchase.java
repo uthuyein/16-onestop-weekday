@@ -7,6 +7,7 @@ import com.jdc.mkt.entity.listeners.EnableTimerListener;
 import com.jdc.mkt.entity.listeners.Times;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,6 +23,7 @@ import lombok.Data;
 public class Purchase implements EnableTimerListener{
 
 	@Id
+	@Column(length = 36)
 	@GeneratedValue(strategy = GenerationType.UUID)
 	private UUID id;
 	
@@ -31,5 +33,6 @@ public class Purchase implements EnableTimerListener{
 	@Embedded
 	private Times times;
 	
+	@Column(name = "issue_date")
 	private LocalDate issueDate;
 }

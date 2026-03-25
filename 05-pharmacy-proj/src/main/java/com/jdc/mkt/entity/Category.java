@@ -21,6 +21,6 @@ public class Category {
 	@Column(nullable = false,length = 45,unique = true)
 	private String name;
 	
-	@Column(columnDefinition = "tinyint(1) default 1")
+	@Column(name="is_active",columnDefinition = "tinyint(1) default 1")
 	private boolean isActive;
 }

@@ -14,11 +14,11 @@ public class SaleDetailPk implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	@Column(name="sale_id")
+	@Column(name="sale_id",length = 36)
 	private UUID saleId;
 	
 	@Column(name="medicine_id")
 	private int medicineId;
-	
+	@Column(name="sale_time")
 	private LocalTime saleTime;
 }

@@ -27,10 +27,10 @@ public class Supplier {
 	private Contact primary;
 	
 	@Embedded
-	@AttributeOverride(name = "email",column = @Column(name = "secondary_email",length = 20,unique = true))
+	@AttributeOverride(name = "email",column = @Column(name = "secondary_email",length = 45,unique = true))
 	@AttributeOverride(name = "phone",column = @Column(name = "secondary_phone",length = 20,unique = true))
 	private Contact secondary;
 	
-	@Column(columnDefinition = "tinyint(1) default 1")
+	@Column(name="is_active",columnDefinition = "tinyint(1) default 1")
 	private boolean isActive;
 }

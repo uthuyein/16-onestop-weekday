@@ -24,6 +24,6 @@ public class Customer {
 	@Embedded
 	private Contact contact;
 	
-	@Column(columnDefinition = "tinyint(1) default 1")
+	@Column(name="is_active",columnDefinition = "tinyint(1) default 1")
 	private boolean isActive;
 }

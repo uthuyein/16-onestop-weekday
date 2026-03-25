@@ -6,6 +6,7 @@ import java.util.UUID;
 import com.jdc.mkt.entity.listeners.EnableTimerListener;
 import com.jdc.mkt.entity.listeners.Times;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,6 +22,7 @@ import lombok.Data;
 public class Sale implements EnableTimerListener{
 
 	@Id
+	@Column(length = 36)
 	@GeneratedValue(strategy = GenerationType.UUID)
 	private UUID id;
 	
@@ -32,5 +34,6 @@ public class Sale implements EnableTimerListener{
 	@ManyToOne
 	private Employee employee;
 	
+	@Column(name = "sale_date")
 	private LocalDate saleDate;
 }
