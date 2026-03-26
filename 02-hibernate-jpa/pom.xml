@@ -38,6 +38,7 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
+		
 	</dependencies>
 	<build>
 		<plugins>
@@ -59,5 +60,6 @@
 		<module>04-inheritance-mappings</module>
 		<module>05-converters</module>
 		<module>06-entity-manager</module>
+		<module>07-query</module>
 	</modules>
 </project>

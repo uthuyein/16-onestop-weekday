@@ -1,16 +1,16 @@
 package com.jdc.mkt.test;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeAll;
 
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
 public class JpaFactory {
 
-	EntityManagerFactory emf;
+	static EntityManagerFactory emf;
 	
-	@Test
-	void test() {
+	@BeforeAll
+	static void init() {
 		emf = Persistence.createEntityManagerFactory("relation-mappings");
 	}
 }

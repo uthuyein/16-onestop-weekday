@@ -1,43 +1,29 @@
 package com.jdc.mkt.entity;
 
-import java.util.List;
-
 import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
+import jakarta.persistence.ExcludeDefaultListeners;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 
 @Data
 @Entity
+@ExcludeDefaultListeners
 @Table(name = "customer_tbl")
 public class Customer {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
 	@Column(nullable = false,length = 45)
 	private String name;
-	
-	@Column(columnDefinition = "tinyint(1) not null default 1")
-	private boolean isActive;
-	
-	@OneToOne(fetch = FetchType.LAZY,optional = false)
+	@Embedded
 	private Contact contact;
 	
-	@ManyToMany(fetch = FetchType.EAGER)
-	private List<Address> addresses;
+	@Column(name="is_active",columnDefinition = "tinyint(1) default 1")
+	private boolean isActive;
 }
-
-
-
-
-
-
-

@@ -79,14 +79,39 @@ INSERT INTO sale_tbl(id, customer_id, employee_id, create_time, update_time, sal
 INSERT INTO sale_tbl(id, customer_id, employee_id, create_time, update_time, sale_date)VALUES('aaaaaaa4-4444-4444-4444-444444444444', 1, 4, NOW(), NOW(), '2024-03-04');
 INSERT INTO sale_tbl(id, customer_id, employee_id, create_time, update_time, sale_date)VALUES('aaaaaaa5-5555-5555-5555-555555555555', 4, 3, NOW(), NOW(), '2024-03-05');
 
-INSERT INTO sale_tbl(id, customer_id, employee_id, create_time, update_time, sale_date)VALUES(UUID(), 1, 3, NOW(), NOW(), CURDATE());
-INSERT INTO sale_tbl(id, customer_id, employee_id, create_time, update_time, sale_date)VALUES(UUID(), 2, 4, NOW(), NOW(), CURDATE());
+INSERT INTO sale_tbl(id, customer_id, employee_id, create_time, update_time, sale_date)VALUES('ccccccc1-1111-1111-1111-111111111111', 1, 3, NOW(), NOW(), CURDATE());
+INSERT INTO sale_tbl(id, customer_id, employee_id, create_time, update_time, sale_date)VALUES('ccccccc2-2222-2222-2222-222222222222', 2, 4, NOW(), NOW(), CURDATE());
+INSERT INTO sale_tbl(id, customer_id, employee_id, create_time, update_time, sale_date)VALUES('ccccccc3-3333-3333-3333-333333333333', 2, 4, NOW(), NOW(), CURDATE());
+
 
 INSERT INTO sale_details_tbl(sale_id, medicine_id, sale_time, qty, sale_price, create_time, update_time)VALUES('aaaaaaa1-1111-1111-1111-111111111111', 1, '09:00:00', 2, 2.50, NOW(), NOW());
 INSERT INTO sale_details_tbl(sale_id, medicine_id, sale_time, qty, sale_price, create_time, update_time)VALUES('aaaaaaa1-1111-1111-1111-111111111111', 2, '09:05:00', 1, 5.75, NOW(), NOW());
 
 INSERT INTO sale_details_tbl(sale_id, medicine_id, sale_time, qty, sale_price, create_time, update_time)VALUES('aaaaaaa2-2222-2222-2222-222222222222', 3, '10:00:00', 3, 3.20, NOW(), NOW());
+INSERT INTO sale_details_tbl(sale_id, medicine_id, sale_time, qty, sale_price, create_time, update_time)VALUES('aaaaaaa2-2222-2222-2222-222222222222', 4, '10:05:00', 1, 4.10, NOW(), NULL);
+INSERT INTO sale_details_tbl(sale_id, medicine_id, sale_time, qty, sale_price, create_time, update_time)VALUES('aaaaaaa2-2222-2222-2222-222222222222', 5, '10:10:00', 2, 6.50, NOW(), NULL);
 
 INSERT INTO sale_details_tbl(sale_id, medicine_id, sale_time, qty, sale_price, create_time, update_time)VALUES('aaaaaaa3-3333-3333-3333-333333333333', 1, '11:00:00', 1, 2.50, NOW(), NOW());
 INSERT INTO sale_details_tbl(sale_id, medicine_id, sale_time, qty, sale_price, create_time, update_time)VALUES('aaaaaaa3-3333-3333-3333-333333333333', 4, '11:10:00', 2, 4.10, NOW(), NOW());
+
+INSERT INTO sale_details_tbl(sale_id, medicine_id, sale_time, qty, sale_price, create_time, update_time)VALUES('aaaaaaa3-3333-3333-3333-333333333333', 2, '11:00:00', 1, 5.75, NOW(), NULL);
+INSERT INTO sale_details_tbl(sale_id, medicine_id, sale_time, qty, sale_price, create_time, update_time)VALUES('aaaaaaa3-3333-3333-3333-333333333333', 3, '11:05:00', 2, 3.20, NOW(), NULL);
+INSERT INTO sale_details_tbl(sale_id, medicine_id, sale_time, qty, sale_price, create_time, update_time)VALUES('aaaaaaa3-3333-3333-3333-333333333333', 1, '11:10:00', 1, 2.50, NOW(), NULL);
+
+INSERT INTO sale_details_tbl(sale_id, medicine_id, sale_time, qty, sale_price, create_time, update_time)VALUES('aaaaaaa4-4444-4444-4444-444444444444', 5, '12:00:00', 1, 6.50, NOW(), NULL);
+INSERT INTO sale_details_tbl(sale_id, medicine_id, sale_time, qty, sale_price, create_time, update_time)VALUES('aaaaaaa4-4444-4444-4444-444444444444', 4, '12:05:00', 3, 4.10, NOW(), NULL);
+
+INSERT INTO sale_details_tbl(sale_id, medicine_id, sale_time, qty, sale_price, create_time, update_time)VALUES('aaaaaaa5-5555-5555-5555-555555555555', 1, '13:00:00', 2, 2.50, NOW(), NULL);
+INSERT INTO sale_details_tbl(sale_id, medicine_id, sale_time, qty, sale_price, create_time, update_time)VALUES('aaaaaaa5-5555-5555-5555-555555555555', 3, '13:05:00', 1, 3.20, NOW(), NULL);
+INSERT INTO sale_details_tbl(sale_id, medicine_id, sale_time, qty, sale_price, create_time, update_time)VALUES('aaaaaaa5-5555-5555-5555-555555555555', 2, '13:10:00', 2, 5.75, NOW(), NULL);
+
+INSERT INTO sale_details_tbl(sale_id, medicine_id, sale_time, qty, sale_price, create_time, update_time)VALUES('ccccccc1-1111-1111-1111-111111111111', 1, '14:00:00', 1, 2.50, NOW(), NULL);
+INSERT INTO sale_details_tbl(sale_id, medicine_id, sale_time, qty, sale_price, create_time, update_time)VALUES('ccccccc1-1111-1111-1111-111111111111', 2, '14:03:00', 2, 5.75, NOW(), NULL);
+INSERT INTO sale_details_tbl(sale_id, medicine_id, sale_time, qty, sale_price, create_time, update_time)VALUES('ccccccc1-1111-1111-1111-111111111111', 3, '14:06:00', 1, 3.20, NOW(), NULL);
+
+INSERT INTO sale_details_tbl(sale_id, medicine_id, sale_time, qty, sale_price, create_time, update_time)VALUES('ccccccc2-2222-2222-2222-222222222222', 4, '15:00:00', 3, 4.10, NOW(), NULL);
+INSERT INTO sale_details_tbl(sale_id, medicine_id, sale_time, qty, sale_price, create_time, update_time)VALUES('ccccccc2-2222-2222-2222-222222222222', 5, '15:05:00', 1, 6.50, NOW(), NULL);
+
+INSERT INTO sale_details_tbl(sale_id, medicine_id, sale_time, qty, sale_price, create_time, update_time)VALUES('ccccccc3-3333-3333-3333-333333333333', 2, '16:00:00', 2, 5.75, NOW(), NULL);
+INSERT INTO sale_details_tbl(sale_id, medicine_id, sale_time, qty, sale_price, create_time, update_time)VALUES('ccccccc3-3333-3333-3333-333333333333', 1, '16:05:00', 1, 2.50, NOW(), NULL);
 set foreign_key_checks=1;
